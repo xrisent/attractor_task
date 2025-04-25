@@ -23,10 +23,11 @@
 
 ⚙️ Установка и запуск
 <br/>
+<br/>
 Требования
 <br/>
-Node.js 20.17
-npm 10.9.0
+- Node.js 20.17
+- npm 10.9.0
 
 1. Клонирование репозитория
 ```
@@ -39,6 +40,9 @@ npm install
 ```
 3. Настройка GitHub OAuth
 Перейдите в GitHub Developer Settings.
+```
+https://github.com/settings/developers
+```
 
 - Создайте New OAuth App:
 
