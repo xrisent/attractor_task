@@ -56,7 +56,7 @@ export const ProfileView = ({
         className="profilePage__box-avatar"
       />
       <div className="profilePage__box-info">
-        <h2>{profile.name || profile.login}</h2>
+        <h2>{profile.login}</h2>
 
         {renderField("name", "Name", profile.name)}
         {renderField("bio", "Bio", profile.bio, true)}

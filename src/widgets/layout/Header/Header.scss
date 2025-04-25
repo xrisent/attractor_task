@@ -16,16 +16,19 @@ header{
                 align-items: center;
                 li{
                     height: 80%;
-                    width: 150px;
+                    width: 200px;
                     cursor: pointer;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     text-align: center;
+                    font-size: 20px;
+                    font-weight: 500;
+                    transition: all .3s ease;
                 }
 
                 li:hover{
-                    border-bottom: 1px solid black;
+                    color: white;
                 }
             }
         }

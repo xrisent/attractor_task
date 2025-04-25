@@ -4,14 +4,18 @@
     gap: 20px;
 
     button{
-        width: 200px;
+        width: 250px;
         height: 50px;
         border: none;
         cursor: pointer;
-        background: none;
+        background-color: #bebebe;
+        border-radius: 20px;
+        color: white;
+        font-size: 18px;
+        transition: all .3s ease;
     }
 
     button:hover{
-        border-bottom: 1px solid black;
+        background-color: #929191; 
     }
 }
