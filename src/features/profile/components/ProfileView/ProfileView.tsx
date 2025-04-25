@@ -1,6 +1,6 @@
-import { ProfileViewProps } from '@/entities/Profile/types';
-import { EditField } from '../EditField/EditField';
-import './ProfileView.scss';
+import { ProfileViewProps } from "@/entities/Profile/types";
+import { EditField } from "../EditField/EditField";
+import "./ProfileView.scss";
 
 export const ProfileView = ({
   profile,
@@ -11,11 +11,16 @@ export const ProfileView = ({
   saveField,
   cancelEditing,
 }: ProfileViewProps) => {
-  const renderField = (fieldName: string, label: string, value: string | null, isTextarea = false) => {
+  const renderField = (
+    fieldName: string,
+    label: string,
+    value: string | null,
+    isTextarea = false
+  ) => {
     if (!value) return null;
-    
+
     return (
-      <div className="profile-field">
+      <div className="profilePage__box-field">
         <strong>{label}:</strong>
         {editingField === fieldName ? (
           <EditField
@@ -28,7 +33,7 @@ export const ProfileView = ({
         ) : (
           <div className="field-value">
             <span>{value}</span>
-            <button 
+            <button
               onClick={() => startEditing(fieldName, value)}
               className="edit-btn"
             >
@@ -41,37 +46,38 @@ export const ProfileView = ({
   };
 
   return (
-    <div className="profile-container">
-      <div className="profile-header">
-        <img
-          src={profile.avatar_url || `https://www.gravatar.com/avatar/${profile.login}?d=identicon`}
-          alt="Profile"
-          className="profile-avatar"
-        />
-        <div className="profile-info">
-          <h2>{profile.name || profile.login}</h2>
-          
-          {renderField('name', 'Name', profile.name)}
-          {renderField('bio', 'Bio', profile.bio, true)}
-          {renderField('company', 'Company', profile.company)}
-          {renderField('location', 'Location', profile.location)}
-          
-          <div className="profile-field">
-            <strong>Username:</strong> {profile.login}
+    <div className="profilePage__box">
+      <img
+        src={
+          profile.avatar_url ||
+          `https://www.gravatar.com/avatar/${profile.login}?d=identicon`
+        }
+        alt="Profile"
+        className="profilePage__box-avatar"
+      />
+      <div className="profilePage__box-info">
+        <h2>{profile.name || profile.login}</h2>
+
+        {renderField("name", "Name", profile.name)}
+        {renderField("bio", "Bio", profile.bio, true)}
+        {renderField("company", "Company", profile.company)}
+        {renderField("location", "Location", profile.location)}
+
+        <div className="profilePage__box-field">
+          <strong>Username:</strong> {profile.login}
+        </div>
+
+        {profile.email && (
+          <div className="profilePage__box-field">
+            <strong>Email:</strong> {profile.email}
           </div>
-          
-          {profile.email && (
-            <div className="profile-field">
-              <strong>Email:</strong> {profile.email}
-            </div>
-          )}
-          
-          <div className="profile-field">
-            <strong>Profile URL:</strong>{' '}
-            <a href={profile.html_url} target="_blank" rel="noopener noreferrer">
-              {profile.html_url}
-            </a>
-          </div>
+        )}
+
+        <div className="profilePage__box-field">
+          <strong>Profile URL:</strong>{" "}
+          <a href={profile.html_url} target="_blank" rel="noopener noreferrer">
+            {profile.html_url}
+          </a>
         </div>
       </div>
     </div>

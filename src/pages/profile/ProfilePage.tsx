@@ -1,7 +1,7 @@
-import { useProfile } from '@/features/profile/hooks/useProfile';
-import { ProfileView } from '@/features/profile/components/ProfileView/ProfileView';
-import { Loader } from '@/shared/ui/Loader/Loader';
-import './ProfilePage.scss';
+import { useProfile } from "@/features/profile/hooks/useProfile";
+import { ProfileView } from "@/features/profile/components/ProfileView/ProfileView";
+import { Loader } from "@/shared/ui/Loader/Loader";
+import "./ProfilePage.scss";
 
 export const ProfilePage = () => {
   const {
@@ -21,14 +21,18 @@ export const ProfilePage = () => {
   if (!profile) return <div>No profile data</div>;
 
   return (
-    <ProfileView
-      profile={profile}
-      editingField={editingField}
-      fieldValue={fieldValue}
-      startEditing={startEditing}
-      handleFieldChange={handleFieldChange}
-      saveField={saveField}
-      cancelEditing={cancelEditing}
-    />
+    <section id="profilePage">
+      <div className="container">
+        <ProfileView
+          profile={profile}
+          editingField={editingField}
+          fieldValue={fieldValue}
+          startEditing={startEditing}
+          handleFieldChange={handleFieldChange}
+          saveField={saveField}
+          cancelEditing={cancelEditing}
+        />
+      </div>
+    </section>
   );
 };

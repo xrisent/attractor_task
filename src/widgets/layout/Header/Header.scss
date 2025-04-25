@@ -1,13 +1,26 @@
 header{
+    height: 10vh;
 
     .container{
+        height: 100%;
 
         .header__nav{
+            height: 100%;
+            width: 100%;
             ul{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
                 li{
-                    list-style: none;
+                    height: 80%;
                     width: 150px;
                     cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
                 }
 
                 li:hover{
