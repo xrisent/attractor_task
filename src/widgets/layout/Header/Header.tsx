@@ -9,7 +9,9 @@ export const Header = () => {
       <div className="container">
         <nav className="header__nav">
           <ul>
-            <li onClick={()=>navigate('/profile')}>Профиль</li>
+            <li onClick={()=>navigate('/')}>Профиль</li>
+            <li onClick={()=>navigate('/')}>Репозитории</li>
+            <li onClick={()=>navigate('/')}>Другие пользователи</li>
           </ul>
         </nav>
       </div>

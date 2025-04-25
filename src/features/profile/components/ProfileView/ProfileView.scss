@@ -1,0 +1,53 @@
+.profilePage__box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  gap: 30px;
+
+  &-avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &-info {
+    flex: 0.5;
+  }
+
+  &-field {
+    margin: 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    .field-value {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+
+.edit-btn {
+  padding: 4px 8px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+
+  &:hover {
+    background-color: #868686;
+  }
+}
+
+.bio {
+  font-style: italic;
+  color: #555;
+  white-space: pre-line;
+}
