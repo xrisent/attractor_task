@@ -1,0 +1,23 @@
+#repositoriesPage {
+  height: 85vh;
+
+  .container {
+    height: 100%;
+
+    .repositoriesPage__content {
+      padding: 20px;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      h2 {
+        margin-bottom: 20px;
+        color: #24292e;
+        font-size: 32px;
+        font-weight: 600;
+      }
+    }
+  }
+}

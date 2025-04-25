@@ -1,0 +1,26 @@
+.github-auth-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 50px;
+    padding: 0 16px;
+    background-color: #24292f;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  
+    &:hover {
+      background-color: #1b1f23;
+    }
+  
+    .github-icon {
+        width: 30px;
+        height: 30px;
+      fill: white;
+    }
+  }
+  

@@ -1,0 +1,21 @@
+.repository-tabs{
+    margin: 10px 0;
+    display: flex;
+    gap: 20px;
+
+    button{
+        width: 250px;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+        background-color: #bebebe;
+        border-radius: 20px;
+        color: white;
+        font-size: 18px;
+        transition: all .3s ease;
+    }
+
+    button:hover{
+        background-color: #929191; 
+    }
+}

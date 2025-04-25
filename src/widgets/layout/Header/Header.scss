@@ -1,0 +1,36 @@
+header{
+    height: 10vh;
+    background: #bebebe;
+
+    .container{
+        height: 100%;
+
+        .header__nav{
+            height: 100%;
+            width: 100%;
+            ul{
+                height: 100%;
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                li{
+                    height: 80%;
+                    width: 200px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    font-size: 20px;
+                    font-weight: 500;
+                    transition: all .3s ease;
+                }
+
+                li:hover{
+                    color: white;
+                }
+            }
+        }
+    }
+}

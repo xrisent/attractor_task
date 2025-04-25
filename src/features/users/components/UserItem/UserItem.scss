@@ -1,0 +1,38 @@
+.user-item{
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #cfcfcf;
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+
+        .user-login {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .user-link {
+            font-size: 18px;
+            font-weight: 600;
+            color: #3a0dcb;
+            text-decoration: none;
+        }
+
+        .user-link:hover {
+            color: #653fe1;
+        }
+    }
+}
