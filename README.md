@@ -31,7 +31,7 @@
 
 1. Клонирование репозитория
 ```
-git clone git@github.com:xrisent/attractor_task.git
+git clone https://github.com/xrisent/attractor_task.git
 cd attractor_task
 ```
 2. Установка зависимостей
@@ -39,7 +39,7 @@ cd attractor_task
 npm install
 ```
 3. Настройка GitHub OAuth
-Перейдите в GitHub Developer Settings.
+- Перейдите в GitHub Developer Settings.
 ```
 https://github.com/settings/developers
 ```
@@ -55,7 +55,7 @@ https://github.com/settings/developers
 - Скопируйте Client ID и сгенерируйте Client Secret.
 
 4. Создание .env файла
-В корне проекта создайте файл .env и заполните его:
+- В корне проекта создайте файл .env и заполните его:
 ```
 REACT_APP_CLIENT_ID=ваш_client_id
 REACT_APP_SECRET=ваш_client_secret
@@ -67,4 +67,3 @@ REACT_APP_BACK_URL=http://localhost:5000
 npm run start
 ```
 Приложение будет доступно по адресу: http://localhost:3000
-
