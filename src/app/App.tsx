@@ -4,12 +4,13 @@ import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
 import { store, persistor } from './store/store';
 import './App.scss';
+import { Loader } from '@/shared/ui/Loader/Loader';
 
 function App() {
   return (
     <Provider store={store}>
       <PersistGate 
-        loading={<div>Loading...</div>} 
+        loading={<Loader/>} 
         persistor={persistor}
         onBeforeLift={() => new Promise(resolve => setTimeout(resolve, 500))}
       >
