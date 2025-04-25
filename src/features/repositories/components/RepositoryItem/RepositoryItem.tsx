@@ -3,7 +3,6 @@ import { Repository } from '@/entities/Repositories/types';
 import './RepositoryItem.scss';
 
 export const RepositoryItem = ({ repository }: { repository: Repository }) => {
-    console.log(repository.description?.length)
   return (
     <div className="repository-item">
       <div className="repository-header">

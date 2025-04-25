@@ -7,7 +7,8 @@ interface GitHubAuthButtonProps {
 export const GitHubAuthButton = ({ onClick }: GitHubAuthButtonProps) => {
   return (
     <button onClick={onClick} className="github-auth-button">
-      Login with GitHub
+      <img src="/img/github.svg" alt="" className='github-icon'/>
+      <span>Войти с помощью GitHub</span>
     </button>
   );
 };

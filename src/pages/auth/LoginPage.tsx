@@ -11,7 +11,7 @@ export const LoginPage = () => {
       <section id="loginPage">
         <div className="container">
           <div className="loginPage__box">
-            <h1 className="loginPage__box-title">Welcome to GitHub Client</h1>
+            <h1 className="loginPage__box-title">Здравствуйте</h1>
             <GitHubAuthButton onClick={handleLogin} />
           </div>
         </div>
