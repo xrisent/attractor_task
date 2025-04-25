@@ -1,13 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import "./Header.scss";
 
 export const Header = () => {
+  const navigate = useNavigate()
+
   return (
     <header>
       <div className="container">
         <nav className="header__nav">
-          <a href="/profile" className="header__link">
-            Profile
-          </a>
+          <ul>
+            <li onClick={()=>navigate('/profile')}>Профиль</li>
+          </ul>
         </nav>
       </div>
     </header>
