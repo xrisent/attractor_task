@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import authReducer from '@/app/store/auth/authSlice';
 import profileReducer from '@/app/store/profile/profileSlice';
 import repositoriesReducer from '@/app/store/repositories/repositoriesSlice';
+import usersReducer from '@/app/store/users/usersSlice';
 import { 
   persistStore,
   persistReducer,
@@ -28,6 +29,7 @@ export const store = configureStore({
     auth: persistedReducer,
     profile: profileReducer,
     repositories: repositoriesReducer,
+    users: usersReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
