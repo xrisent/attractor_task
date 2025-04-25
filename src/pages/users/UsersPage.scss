@@ -1,0 +1,17 @@
+#usersPage{
+
+    height: 85vh;
+    
+    .container{
+        height: 100%;
+
+        .usersPage__box{
+            height: 100%;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}

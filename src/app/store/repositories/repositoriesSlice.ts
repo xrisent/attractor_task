@@ -1,6 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { axiosInstance } from '@/shared/api/axiosInstance';
-import { Repository } from '@/entities/Repositories/types';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { axiosInstance } from "@/shared/api/axiosInstance";
+import { Repository } from "@/entities/Repositories/types";
 
 interface RepositoriesState {
   data: Repository[];
@@ -15,14 +15,14 @@ const initialState: RepositoriesState = {
 };
 
 export const fetchRepositories = createAsyncThunk(
-  'repositories/fetchRepositories',
-  async (params: { type: 'public' | 'private' }, { rejectWithValue }) => {
+  "repositories/fetchRepositories",
+  async (params: { type: "public" | "private" }, { rejectWithValue }) => {
     try {
-      const response = await axiosInstance.get('/user/repos', {
+      const response = await axiosInstance.get("/user/repos", {
         params: {
           visibility: params.type,
-          sort: 'updated',
-          direction: 'desc',
+          sort: "updated",
+          direction: "desc",
         },
       });
       return response.data;
@@ -32,8 +32,35 @@ export const fetchRepositories = createAsyncThunk(
   }
 );
 
+export const fetchUserRepositories = createAsyncThunk(
+  "repositories/fetchUserRepositories",
+  async (username: string, { rejectWithValue }) => {
+    if (username !== "") {
+      try {
+        const response = await axiosInstance.get(`/users/${username}/repos`, {
+          params: {
+            sort: "updated",
+            direction: "desc",
+          },
+        });
+        return {
+          data: response.data,
+          isUserRepos: true,
+        };
+      } catch (error: any) {
+        return rejectWithValue(error.message);
+      }
+    }else{
+        return {
+            data: [],
+            isUserRepos: false,
+        };
+    }
+  }
+);
+
 const repositoriesSlice = createSlice({
-  name: 'repositories',
+  name: "repositories",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -47,6 +74,18 @@ const repositoriesSlice = createSlice({
         state.data = action.payload;
       })
       .addCase(fetchRepositories.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(fetchUserRepositories.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchUserRepositories.fulfilled, (state, action) => {
+        state.loading = false;
+        state.data = action.payload.data;
+      })
+      .addCase(fetchUserRepositories.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       });

@@ -4,6 +4,7 @@ import { ProfilePage } from "@/pages/profile/ProfilePage";
 import { LoginPage } from "@/pages/auth/LoginPage";
 import ProtectedRoute from "@/shared/utils/ProtectedRoute";
 import { RepositoriesPage } from "@/pages/repositories/RepositoriesPage";
+import { UsersPage } from "@/pages/users/UsersPage";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
           {
             path: "/repositories",
             element: <RepositoriesPage />,
+          },
+          {
+            path: "/users",
+            element: <UsersPage />,
           },
         ],
       },

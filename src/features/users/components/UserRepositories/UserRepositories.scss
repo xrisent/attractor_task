@@ -1,0 +1,24 @@
+.usersPage__box-repositories{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .back-button{
+        width: 200px;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+        background: none;
+    }
+
+    .back-button:hover{
+        border-bottom: 1px solid black;
+    }
+
+    .usersPage__box-repositories__repos-list{
+        
+        height: 90%;
+        overflow-y: auto;
+    }
+}

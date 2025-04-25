@@ -3,6 +3,7 @@ import { Repository } from '@/entities/Repositories/types';
 import './RepositoryItem.scss';
 
 export const RepositoryItem = ({ repository }: { repository: Repository }) => {
+    console.log(repository.description?.length)
   return (
     <div className="repository-item">
       <div className="repository-header">
@@ -17,7 +18,7 @@ export const RepositoryItem = ({ repository }: { repository: Repository }) => {
       </div>
       
       {repository.description && (
-        <p className="repository-description">{repository.description}</p>
+        <p className="repository-description">{repository.description.length >= 150?`${repository.description.slice(0,150)}...`:repository.description}</p>
       )}
       
       <div className="repository-owner">
