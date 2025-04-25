@@ -17,7 +17,7 @@ export const ProfileView = ({
     value: string | null,
     isTextarea = false
   ) => {
-    if (!value) return null;
+    const displayValue: string = value ?? "Нет данных";
 
     return (
       <div className="profilePage__box-field">
@@ -32,13 +32,15 @@ export const ProfileView = ({
           />
         ) : (
           <div className="field-value">
-            <span>{value}</span>
-            <button
-              onClick={() => startEditing(fieldName, value)}
-              className="edit-btn"
-            >
-              Edit
-            </button>
+            <span>{displayValue}</span>
+            {displayValue !== "Нет данных" && (
+              <button
+                onClick={() => startEditing(fieldName, displayValue)}
+                className="edit-btn"
+              >
+                Редактировать
+              </button>
+            )}
           </div>
         )}
       </div>
@@ -58,13 +60,13 @@ export const ProfileView = ({
       <div className="profilePage__box-info">
         <h2>{profile.login}</h2>
 
-        {renderField("name", "Name", profile.name)}
-        {renderField("bio", "Bio", profile.bio, true)}
-        {renderField("company", "Company", profile.company)}
-        {renderField("location", "Location", profile.location)}
+        {renderField("name", "Имя", profile.name)}
+        {renderField("bio", "О себе", profile.bio, true)}
+        {renderField("company", "Компания", profile.company)}
+        {renderField("location", "Локация", profile.location)}
 
         <div className="profilePage__box-field">
-          <strong>Username:</strong> {profile.login}
+          <strong>Логин:</strong> {profile.login}
         </div>
 
         {profile.email && (
@@ -74,7 +76,7 @@ export const ProfileView = ({
         )}
 
         <div className="profilePage__box-field">
-          <strong>Profile URL:</strong>{" "}
+          <strong>Ссылка на профиль в Github:</strong>{" "}
           <a href={profile.html_url} target="_blank" rel="noopener noreferrer">
             {profile.html_url}
           </a>
