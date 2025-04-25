@@ -1,0 +1,19 @@
+header{
+
+    .container{
+
+        .header__nav{
+            ul{
+                li{
+                    list-style: none;
+                    width: 150px;
+                    cursor: pointer;
+                }
+
+                li:hover{
+                    border-bottom: 1px solid black;
+                }
+            }
+        }
+    }
+}
