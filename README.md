@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+#### GitHub OAuth Client
+Этот проект представляет собой клиентское приложение для авторизации через GitHub OAuth и работы с GitHub данными, написанное на React (TypeScript) с использованием современных инструментов и библиотек.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Технологии
+- React (TypeScript)
 
-## Available Scripts
+- Redux + Redux Persist (хранение токена и состояния)
 
-In the project directory, you can run:
+- Sass (стилизация)
 
-### `npm start`
+- Express (микросервис для получения токена)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Craco (поддержка алиасов @)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React Router DOM (навигация)
 
-### `npm test`
+- Axios (HTTP-запросы + кастомный instance)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Concurrently (Для параллельной работы двух сервисов)
 
-### `npm run build`
+<br/>
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+⚙️ Установка и запуск
+<br/>
+Требования
+<br/>
+Node.js 20.17
+npm 10.9.0
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Клонирование репозитория
+```
+git clone git@github.com:xrisent/attractor_task.git
+cd attractor_task
+```
+2. Установка зависимостей
+```
+npm install
+```
+3. Настройка GitHub OAuth
+Перейдите в GitHub Developer Settings.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Создайте New OAuth App:
 
-### `npm run eject`
+- Application name: Любое название (например, My OAuth App)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Homepage URL: http://localhost:3000
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Authorization callback URL: http://localhost:3000/login
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Скопируйте Client ID и сгенерируйте Client Secret.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Создание .env файла
+В корне проекта создайте файл .env и заполните его:
+```
+REACT_APP_CLIENT_ID=ваш_client_id
+REACT_APP_SECRET=ваш_client_secret
+REACT_APP_CALLBACK=http://localhost:3000/login
+REACT_APP_BACK_URL=http://localhost:5000
+```
+5. Запуск проекта
+```
+npm run start
+```
+Приложение будет доступно по адресу: http://localhost:3000
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
