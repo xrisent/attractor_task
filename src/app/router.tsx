@@ -3,6 +3,7 @@ import { Layout } from "@/widgets/layout/Layout";
 import { ProfilePage } from "@/pages/profile/ProfilePage";
 import { LoginPage } from "@/pages/auth/LoginPage";
 import ProtectedRoute from "@/shared/utils/ProtectedRoute";
+import { RepositoriesPage } from "@/pages/repositories/RepositoriesPage";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
           {
             index: true, 
             element: <ProfilePage />,
+          },
+          {
+            path: "/repositories",
+            element: <RepositoriesPage />,
           },
         ],
       },
