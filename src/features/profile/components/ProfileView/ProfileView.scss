@@ -8,14 +8,14 @@
   gap: 30px;
 
   &-avatar {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     object-fit: cover;
   }
 
   &-info {
-    flex: 0.6;
+    flex: 0.5;
   }
 
   &-field {

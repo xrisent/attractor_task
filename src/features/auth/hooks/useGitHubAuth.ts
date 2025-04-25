@@ -17,7 +17,7 @@ export const useGitHubAuth = () => {
         try {
           const token = await getGitHubToken(code);
           dispatch(setToken(token));
-          navigate('/profile');
+          navigate('/');
         } catch (error) {
           console.error('Error during authentication:', error);
         }
