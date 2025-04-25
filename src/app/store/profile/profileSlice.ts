@@ -1,20 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { GitHubApi } from '@/shared/api/githubApi';
+import { ProfileState } from '@/entities/Profile/types';
 
-interface ProfileState {
-  data: {
-    name: string;
-    login: string;
-    email: string | null;
-    avatar_url: string;
-    company: string | null;
-    location: string | null;
-    bio: string | null;
-    html_url: string;
-  } | null;
-  loading: boolean;
-  error: string | null;
-}
 
 const initialState: ProfileState = {
   data: null,

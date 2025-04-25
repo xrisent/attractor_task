@@ -30,3 +30,19 @@ export interface EditFieldProps {
   onCancel: () => void;
   isTextarea?: boolean;
 }
+
+
+export interface ProfileState {
+    data: {
+      name: string;
+      login: string;
+      email: string | null;
+      avatar_url: string;
+      company: string | null;
+      location: string | null;
+      bio: string | null;
+      html_url: string;
+    } | null;
+    loading: boolean;
+    error: string | null;
+  }

@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from '@/app/store/auth/authSlice';
 import profileReducer from '@/app/store/profile/profileSlice';
+import repositoriesReducer from '@/app/store/repositories/repositoriesSlice';
 import { 
   persistStore,
   persistReducer,
@@ -26,6 +27,7 @@ export const store = configureStore({
   reducer: {
     auth: persistedReducer,
     profile: profileReducer,
+    repositories: repositoriesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -35,7 +37,6 @@ export const store = configureStore({
     }),
 });
 
-// Настраиваем интерцепторы после создания store
 setupAxiosInterceptors(store);
 
 export const persistor = persistStore(store);
