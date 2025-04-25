@@ -6,18 +6,18 @@ import ProtectedRoute from "@/shared/utils/ProtectedRoute";
 
 export const router = createBrowserRouter([
   {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
     path: "/",
     element: <Layout />,
     children: [
       {
-        path: "/login",
-        element: <LoginPage />,
-      },
-      {
         element: <ProtectedRoute />,
         children: [
           {
-            path: "/profile",
+            index: true, 
             element: <ProfilePage />,
           },
         ],
